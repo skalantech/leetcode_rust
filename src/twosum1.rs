@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 struct Solution;
 
 impl Solution {

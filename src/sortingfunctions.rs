@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 fn swap(a: &mut i32, b: &mut i32) {
     let tmp = *a;
     *a = *b;
@@ -107,7 +109,7 @@ fn print_array(a: &[i32]) {
     println!();
 }
 
-fn main() {
+pub fn main() {
     let mut data = [9, 8, 7, 6, 5, 4, 3, 2, 1, 0];
     let size = data.len();
     println!("{}", size);

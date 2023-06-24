@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 pub struct Solution;
 
 impl Solution {
@@ -22,7 +24,7 @@ impl Solution {
     }
 }
 
-fn main() {
+pub fn main() {
     let nums = vec![1, 3, 5, 6];
     let res = Solution::search_insert(&nums, 4);
     println!("{}", res);

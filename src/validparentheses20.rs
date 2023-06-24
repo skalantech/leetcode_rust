@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 #[derive(Clone, Copy, PartialEq)]
 enum Item {
     Char(char),
@@ -100,7 +102,7 @@ impl Solution {
     }
 }
 
-fn main() {
+pub fn main() {
     let s = String::from("{{{[[]]}}}");
     let sol = Solution {};
     let ans = if sol.is_valid(s.clone()) { "true" } else { "false" };

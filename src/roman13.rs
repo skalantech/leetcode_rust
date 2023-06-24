@@ -1,3 +1,5 @@
+#![allow(unused)]
+
 use std::collections::HashMap;
 
 struct Solution;
@@ -38,7 +40,7 @@ impl Solution {
     }
 }
 
-fn main() {
+pub fn main() {
     let str_value = String::from("MCMXCIV");
     let res = Solution::roman_to_int(str_value);
     println!("{}", res);

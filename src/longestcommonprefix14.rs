@@ -1,9 +1,11 @@
+#![allow(unused)]
+
 use std::collections::HashMap;
 
 struct Solution;
 
 impl Solution {
-    fn longest_common_prefix(strs: &mut Vec<String>) -> String {
+    pub fn longest_common_prefix(strs: Vec<String>) -> String {
         let n_words = strs.len();
         let mut pattern = String::new();
 
@@ -20,7 +22,8 @@ impl Solution {
                     shortest = strs[g].len();
                 }
             }
-
+            //println!("{}", shortest);
+            let mut y = shortest;
             for i in 1..n_words {
                 let other = &strs[i];
                 let mut k = 0;
@@ -32,17 +35,15 @@ impl Solution {
                         break;
                     }
                 }
-
-                for _ in 0..k {
-                    strs[i].remove(0);
+                
+                if k < y {
+                    y = k;
                 }
+                //println!("{}", y);
             }
-
-            if let Some(min) = strs.iter().map(|s| s.len()).min() {
-                for _ in 0..min {
-                    pattern.push(word.chars().nth(0).unwrap());
-                    word.remove(0);
-                }
+            
+            for h in 0..y {
+                    pattern.push(word.chars().nth(h).unwrap());
             }
 
             pattern
@@ -50,11 +51,11 @@ impl Solution {
     }
 }
 
-fn main() {
-    let mut strs = vec!["flower", "flow", "flight"]
+pub fn main() {
+    let mut strs = vec!("dog","racecar","car")
         .into_iter()
         .map(String::from)
         .collect::<Vec<String>>();
-    let res = Solution::longest_common_prefix(&mut strs);
+    let res = Solution::longest_common_prefix(strs);
     println!("{}", res);
 }
