@@ -4,6 +4,7 @@ mod longestcommonprefix14;
 mod roman13;
 mod validparentheses20;
 mod removeduplicates26;
+mod removeelement27;
 mod searchinsert35;
 mod sortingfunctions;
 mod sortarray912;
@@ -15,6 +16,7 @@ fn main() {
     // longestcommonprefix14::main();
     // validparentheses20::main();
     removeduplicates26::main();
+    removeelement27::main();
     // searchinsert35::main();
     // sortarray912::main();
     // sortingfunctions::main();
