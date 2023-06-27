@@ -122,10 +122,13 @@ pub fn main() {
 
     bubble_sort(&mut data0);
     print_array(&data0);
+
     selection_sort(&mut data1);
     print_array(&data1);
+
     insertion_sort(&mut data2);
     print_array(&data2);
+    
     merge_sort(&mut data3, 0, size - 1);
     print_array(&data3);
 }
