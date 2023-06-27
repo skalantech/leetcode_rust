@@ -9,5 +9,6 @@ mod sortingfunctions;
 fn main() {
     //twosum1::main();
     //palindrome9::main();
-    longestcommonprefix14::main();
+    //longestcommonprefix14::main();
+    sortingfunctions::main();
 }
