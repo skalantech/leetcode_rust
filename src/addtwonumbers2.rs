@@ -12,6 +12,28 @@ impl ListNode {
     fn new(val: i32) -> Self {
         ListNode { next: None, val }
     }
+
+    fn append(&mut self, val: i32) {
+        let new_node = Box::new(ListNode::new(val));
+        let mut current_node = self;
+
+        while let Some(ref mut next_node) = current_node.next {
+            current_node = next_node;
+        }
+
+        current_node.next = Some(new_node);
+    }
+
+    fn print(&self) {
+        let mut current_node = self;
+
+        while let Some(next_node) = &current_node.next {
+            println!("{:?}", current_node.val);
+            current_node = next_node;
+        }
+
+        println!("{:?}", current_node.val);
+    }
 }
 
 struct Solution;
@@ -51,5 +73,19 @@ impl Solution {
 }
 
 pub fn main() {
+    let mut l1= Box::new(ListNode::new(2));
+    l1.append(6);
+    l1.append(9);
+    println!("l1 list:");
+    l1.print();
 
+    let mut l2= Box::new(ListNode::new(2));
+    l2.append(6);
+    l2.append(9);
+    println!("l2 list:");
+    l2.print();
+
+    let l3 = Solution::add_two_numbers(Some(l1), Some(l2));
+    println!("l3 list:");
+    l3.unwrap().print();
 }
